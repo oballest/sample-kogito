@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="http://www.omg.org/spec/DMN/20180521/MODEL/" xmlns="https://kiegroup.org/dmn/_24642754-ABCD-4689-8804-6639D2CF8CA9" xmlns:feel="http://www.omg.org/spec/DMN/20180521/FEEL/" xmlns:kie="http://www.drools.org/kie/dmn/1.2" xmlns:dmndi="http://www.omg.org/spec/DMN/20180521/DMNDI/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" id="_84195900-DCA7-4630-B444-BE50D9C1CEEB" name="personas" typeLanguage="http://www.omg.org/spec/DMN/20180521/FEEL/" namespace="https://kiegroup.org/dmn/_24642754-ABCD-4689-8804-6639D2CF8CA9">
+  <dmn:extensionElements/>
+  <dmn:itemDefinition id="_190B05B7-1A78-475F-ADAF-3643B42D8D2D" name="Persona" isCollection="false">
+    <dmn:itemComponent id="_11605A8E-8B51-4F30-8AB0-44769476DC3E" name="nombre" isCollection="false">
+      <dmn:typeRef>string</dmn:typeRef>
+    </dmn:itemComponent>
+    <dmn:itemComponent id="_C4909985-B2AE-48FE-94C3-74184502F742" name="edad" isCollection="false">
+      <dmn:typeRef>number</dmn:typeRef>
+    </dmn:itemComponent>
+  </dmn:itemDefinition>
+  <dmn:inputData id="_54476B8C-5435-45D8-8D7A-A7CF2F4C29A3" name="Persona">
+    <dmn:extensionElements/>
+    <dmn:variable id="_5C6BD362-52AA-4D57-9CBA-2C4348599350" name="Persona" typeRef="Persona"/>
+  </dmn:inputData>
+  <dmn:decision id="_0AD531DC-D6EB-4415-BB51-9255330A9111" name="Mayor de Edad">
+    <dmn:extensionElements/>
+    <dmn:variable id="_3CC8FD92-CED0-4E1E-8B4E-253C5808DE28" name="Mayor de Edad" typeRef="boolean"/>
+    <dmn:informationRequirement id="_4011D2EA-B8BD-49AA-9DC4-2E7C8DFDFCA0">
+      <dmn:requiredInput href="#_54476B8C-5435-45D8-8D7A-A7CF2F4C29A3"/>
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="_12B94BA1-EF51-412F-9F30-A4B903D9C09D" hitPolicy="UNIQUE" preferredOrientation="Rule-as-Row">
+      <dmn:input id="_C3479DC5-D9C9-4DF2-A339-FFAE0F8015D8">
+        <dmn:inputExpression id="_ADF03F10-A05E-4791-910E-C207E5404B70" typeRef="number">
+          <dmn:text>Persona.edad</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="_C196AB47-3224-4E63-8AEB-1BA0F107A5A1">
+        <dmn:inputExpression id="_6E137897-B6E8-4782-B476-882428FC7DB5" typeRef="string">
+          <dmn:text>Persona.nombre</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="_B4821637-0AD9-44D6-8D36-3FB0119BCC1C"/>
+      <dmn:annotation name="annotation-1"/>
+      <dmn:rule id="_0C89B1B7-2DCD-4C5A-A94C-96BFA2FA650C">
+        <dmn:inputEntry id="_5C272CD0-5FBC-41D5-A4D3-F6D4A205D650">
+          <dmn:text>38</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_F193589F-6D92-4ED7-B367-727EF1EAE3CC">
+          <dmn:text>"Oscar"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_F11FA3E7-1467-464F-9815-8957A3564A0C">
+          <dmn:text>true</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_7B55591C-FEA5-4A22-9257-4ADCEB5DBA80">
+        <dmn:inputEntry id="_C590A1A4-98F5-4E5C-AD2F-2EDD4BAA2F9E">
+          <dmn:text>38</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_5E055046-CCBA-43D1-8D54-37DF8AFA556F">
+          <dmn:text>"Milena"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_2ACD3222-ABB5-4F90-8A17-8BF44216E3A2">
+          <dmn:text>true</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+      <dmn:rule id="_F328BABE-BD16-44A0-B8EB-A198DAD75F76">
+        <dmn:inputEntry id="_8B133C89-61DD-4859-B353-C4D5E3B72F94">
+          <dmn:text>2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="_A875D89D-EBAA-4E3F-B571-30EC7FD87AF1">
+          <dmn:text>"Carlos"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="_64765ECC-3BD9-48FB-85AD-C626D3781D67">
+          <dmn:text>false</dmn:text>
+        </dmn:outputEntry>
+        <dmn:annotationEntry>
+          <dmn:text/>
+        </dmn:annotationEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="_9075A156-7BAE-4A6B-844D-3BB02D374BCC" name="DRG">
+      <di:extension>
+        <kie:ComponentsWidthsExtension>
+          <kie:ComponentWidths dmnElementRef="_12B94BA1-EF51-412F-9F30-A4B903D9C09D">
+            <kie:width>50</kie:width>
+            <kie:width>216</kie:width>
+            <kie:width>217</kie:width>
+            <kie:width>100</kie:width>
+            <kie:width>213</kie:width>
+          </kie:ComponentWidths>
+        </kie:ComponentsWidthsExtension>
+      </di:extension>
+      <dmndi:DMNShape id="dmnshape-drg-_54476B8C-5435-45D8-8D7A-A7CF2F4C29A3" dmnElementRef="_54476B8C-5435-45D8-8D7A-A7CF2F4C29A3" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="488" y="336" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="dmnshape-drg-_0AD531DC-D6EB-4415-BB51-9255330A9111" dmnElementRef="_0AD531DC-D6EB-4415-BB51-9255330A9111" isCollapsed="false">
+        <dmndi:DMNStyle>
+          <dmndi:FillColor red="255" green="255" blue="255"/>
+          <dmndi:StrokeColor red="0" green="0" blue="0"/>
+          <dmndi:FontColor red="0" green="0" blue="0"/>
+        </dmndi:DMNStyle>
+        <dc:Bounds x="489" y="172" width="100" height="50"/>
+        <dmndi:DMNLabel/>
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="dmnedge-drg-_4011D2EA-B8BD-49AA-9DC4-2E7C8DFDFCA0" dmnElementRef="_4011D2EA-B8BD-49AA-9DC4-2E7C8DFDFCA0">
+        <di:waypoint x="538" y="361"/>
+        <di:waypoint x="539" y="197"/>
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
